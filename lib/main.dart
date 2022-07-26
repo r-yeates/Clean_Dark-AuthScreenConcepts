@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'flutter',
       home: const MyHomePage(),
-      theme: ThemeData(fontFamily: 'Ubuntu'),
+      theme: ThemeData(
+          fontFamily: 'Ubuntu',
+          scaffoldBackgroundColor: const Color(0xff121212)),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -29,30 +31,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: Column(
-        children: [
-          TextButton(
-              onPressed: (() {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SignUpScreen()));
-              }),
-              child: const Text('Sign up')),
-          TextButton(
-              onPressed: (() {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LoginScreen()));
-              }),
-              child: const Text('Login'))
-        ],
-      ),
-    );
+    return const LoginScreen();
   }
 }

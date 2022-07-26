@@ -1,3 +1,4 @@
+import 'package:dark_login_signup_ui/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -11,75 +12,31 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: const Text(
-          'Log in',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-        ),
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 36),
-              Text(
-                'Log in with one of the following options.',
-                style: TextStyle(color: Colors.grey.shade500, fontSize: 15),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade900,
-                        border: Border.all(color: Colors.grey.shade800),
-                        borderRadius: const BorderRadius.all(Radius.circular(
-                                12.0) //                 <--- border radius here
-                            ),
-                      ),
-                      child: IconButton(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          padding: EdgeInsets.zero,
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.g_mobiledata,
-                            size: 40,
-                            color: Colors.white,
-                          )),
-                    ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Hello',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 58),
+                    children: <TextSpan>[
+                      const TextSpan(text: '\n   There'),
+                      TextSpan(
+                          text: '.',
+                          style: TextStyle(color: Colors.pink.shade300)),
+                    ],
                   ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade900,
-                        border: Border.all(color: Colors.grey.shade800),
-                        borderRadius: const BorderRadius.all(Radius.circular(
-                                12.0) //                 <--- border radius here
-                            ),
-                      ),
-                      child: IconButton(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          padding: EdgeInsets.zero,
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.apple,
-                            size: 30,
-                            color: Colors.white,
-                          )),
-                    ),
-                  ),
-                ],
+                ),
               ),
-              const SizedBox(height: 36),
+              const SizedBox(height: 40),
               Text('Email',
                   style: TextStyle(fontSize: 16, color: Colors.grey[50])),
               const SizedBox(height: 8),
@@ -136,19 +93,33 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 style: TextStyle(color: Colors.grey[50], fontSize: 17),
               ),
-              const SizedBox(height: 24),
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {},
+                  child: Text(
+                    'Forgot Password',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.pink.shade300,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
               Row(children: [
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
+                      gradient: LinearGradient(
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
-                        stops: [0.0, 1.0],
+                        stops: const [0.0, 1.0],
                         colors: [
                           Colors.purple,
-                          Colors.pink,
+                          Colors.pink.shade300,
                         ],
                       ),
                       borderRadius: BorderRadius.circular(12),
@@ -173,26 +144,116 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ]),
-              const SizedBox(height: 16),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 15),
+                child: Row(
+                  children: <Widget>[
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Divider(
+                          thickness: 1,
+                          color: Colors.grey.shade500,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'or',
+                      style: TextStyle(
+                        color: Colors.grey.shade500,
+                        fontSize: 15,
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Divider(
+                          thickness: 1,
+                          color: Colors.grey.shade500,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                  ],
+                ),
+              ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Dont have an account?',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.grey.shade500,
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade900,
+                        border: Border.all(color: Colors.grey.shade800),
+                        borderRadius: const BorderRadius.all(Radius.circular(
+                                12.0) //                 <--- border radius here
+                            ),
+                      ),
+                      child: IconButton(
+                          splashColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          padding: EdgeInsets.zero,
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.g_mobiledata,
+                            size: 40,
+                            color: Colors.white,
+                          )),
                     ),
                   ),
-                  const SizedBox(width: 5),
-                  const Text(
-                    'Sign up',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade900,
+                        border: Border.all(color: Colors.grey.shade800),
+                        borderRadius: const BorderRadius.all(Radius.circular(
+                                12.0) //                 <--- border radius here
+                            ),
+                      ),
+                      child: IconButton(
+                          splashColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          padding: EdgeInsets.zero,
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.apple,
+                            size: 30,
+                            color: Colors.white,
+                          )),
+                    ),
                   ),
                 ],
+              ),
+              const SizedBox(height: 16),
+              InkWell(
+                onTap: (() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignUpScreen()),
+                  );
+                }),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Dont have an account?',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey.shade500,
+                      ),
+                    ),
+                    const SizedBox(width: 5),
+                    const Text(
+                      'Sign up',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
