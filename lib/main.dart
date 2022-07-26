@@ -1,14 +1,8 @@
 import 'package:dark_login_signup_ui/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      statusBarColor: Colors.white, // Color for Android
-      statusBarBrightness:
-          Brightness.dark // Dark == white status bar -- for IOS.
-      ));
 }
 
 class MyApp extends StatelessWidget {
