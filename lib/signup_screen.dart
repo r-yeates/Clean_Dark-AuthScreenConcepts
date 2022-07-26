@@ -24,7 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: TextStyle(fontSize: 16, color: Colors.grey[50])),
                 const SizedBox(height: 8),
                 _formFields(),
-                const SizedBox(height: 16),
+                const SizedBox(height: 22),
                 _signupButton(),
                 const SizedBox(height: 16),
                 _loginScreen(context)
@@ -98,7 +98,7 @@ Widget _formFields() {
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.pink, width: 2.0),
+            borderSide: BorderSide(color: Colors.pink.shade300, width: 2.0),
             borderRadius: BorderRadius.circular(12),
           ),
           fillColor: Colors.grey[900],
@@ -124,7 +124,7 @@ Widget _formFields() {
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.pink, width: 2.0),
+            borderSide: BorderSide(color: Colors.pink.shade300, width: 2.0),
             borderRadius: BorderRadius.circular(12),
           ),
           fillColor: Colors.grey[900],
@@ -151,7 +151,7 @@ Widget _formFields() {
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.pink, width: 2.0),
+            borderSide: BorderSide(color: Colors.pink.shade300, width: 2.0),
             borderRadius: BorderRadius.circular(12),
           ),
           fillColor: Colors.grey[900],
