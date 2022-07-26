@@ -1,3 +1,4 @@
+import 'package:dark_login_signup_ui/resetpass_screen.dart';
 import 'package:dark_login_signup_ui/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               _titleText(),
               const SizedBox(height: 40),
-              _formFields(),
+              _formFields(context),
               const SizedBox(height: 16),
               _signinButton(),
               _divider(),
@@ -51,7 +52,7 @@ Widget _titleText() {
   );
 }
 
-Widget _formFields() {
+Widget _formFields(context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -111,7 +112,13 @@ Widget _formFields() {
         padding: const EdgeInsets.symmetric(vertical: 10),
         alignment: Alignment.centerRight,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ForgotPasswordScreen()),
+            );
+          },
           child: Text(
             'Forgot Password',
             style: TextStyle(

@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(),
       theme: ThemeData(
           fontFamily: 'Ubuntu',
+          brightness: Brightness.dark,
           scaffoldBackgroundColor: const Color(0xff121212)),
       debugShowCheckedModeBanner: false,
     );
