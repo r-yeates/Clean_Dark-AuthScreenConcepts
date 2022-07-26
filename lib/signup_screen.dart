@@ -20,9 +20,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               children: [
                 _titleText(),
                 const SizedBox(height: 40),
-                Text('Name',
-                    style: TextStyle(fontSize: 16, color: Colors.grey[50])),
-                const SizedBox(height: 8),
                 _formFields(),
                 const SizedBox(height: 22),
                 _signupButton(),
@@ -31,33 +28,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ],
             ),
           ),
-          Positioned(
-            top: 10,
-            left: 0,
-            child: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      padding:
-                          const EdgeInsets.only(left: 0, top: 10, bottom: 10),
-                      child: Icon(Icons.keyboard_arrow_left,
-                          color: Colors.grey.shade50),
-                    ),
-                    Text('Back',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey.shade50))
-                  ],
-                ),
-              ),
-            ),
-          ),
+          _backButton(context)
         ]),
       ),
     );
@@ -69,7 +40,7 @@ Widget _titleText() {
     padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
     child: RichText(
       text: TextSpan(
-        text: 'Sign Up',
+        text: 'Sign up',
         style: const TextStyle(
             color: Colors.white, fontWeight: FontWeight.bold, fontSize: 58),
         children: <TextSpan>[
@@ -84,6 +55,8 @@ Widget _formFields() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
+      Text('Name', style: TextStyle(fontSize: 16, color: Colors.grey[50])),
+      const SizedBox(height: 8),
       TextFormField(
         showCursor: false,
         textCapitalization: TextCapitalization.sentences,
@@ -223,6 +196,35 @@ Widget _loginScreen(BuildContext context) {
               color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
         ),
       ],
+    ),
+  );
+}
+
+Widget _backButton(BuildContext context) {
+  return Positioned(
+    top: 10,
+    left: 0,
+    child: InkWell(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Row(
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.only(left: 0, top: 10, bottom: 10),
+              child:
+                  Icon(Icons.keyboard_arrow_left, color: Colors.grey.shade50),
+            ),
+            Text('Back',
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey.shade50))
+          ],
+        ),
+      ),
     ),
   );
 }
