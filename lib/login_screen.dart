@@ -1,6 +1,7 @@
 import 'package:dark_login_signup_ui/resetpass_screen.dart';
 import 'package:dark_login_signup_ui/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

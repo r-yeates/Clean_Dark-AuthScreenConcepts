@@ -1,5 +1,6 @@
 import 'package:dark_login_signup_ui/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'flutter',
       home: const MyHomePage(),
       theme: ThemeData(
-          fontFamily: 'Ubuntu',
+          fontFamily: GoogleFonts.ubuntu().fontFamily,
           brightness: Brightness.dark,
           scaffoldBackgroundColor: const Color(0xff121212)),
       debugShowCheckedModeBanner: false,

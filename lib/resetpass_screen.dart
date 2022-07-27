@@ -22,7 +22,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 const SizedBox(height: 40),
                 _formFields(),
                 const SizedBox(height: 22),
-                _signupButton(),
+                _signupButton(context),
               ],
             ),
           ),
@@ -56,7 +56,7 @@ Widget _formFields() {
     children: [
       Text(
           "Enter the email associated with your account and we'll send an email with instructions to reset your password. ",
-          style: TextStyle(fontSize: 18, color: Colors.grey[50])),
+          style: TextStyle(fontSize: 16, color: Colors.grey[50])),
       const SizedBox(height: 16),
       Text('Email', style: TextStyle(fontSize: 16, color: Colors.grey[50])),
       const SizedBox(height: 8),
@@ -87,7 +87,7 @@ Widget _formFields() {
   );
 }
 
-Widget _signupButton() {
+Widget _signupButton(BuildContext context) {
   return Row(children: [
     Expanded(
       child: Container(
@@ -116,7 +116,9 @@ Widget _signupButton() {
                 Colors.transparent,
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
             child: const Text('Reset Password',
                 style: TextStyle(color: Colors.white, fontSize: 16))),
       ),
@@ -152,3 +154,18 @@ Widget _backButton(BuildContext context) {
     ),
   );
 }
+
+SnackBar snackBar = SnackBar(
+  duration: const Duration(seconds: 3),
+  content: const Text(
+    'Password reset email, sent!',
+    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+  ),
+  backgroundColor: Colors.grey.shade900,
+  behavior: SnackBarBehavior.floating,
+  margin: const EdgeInsets.all(30),
+  shape: RoundedRectangleBorder(
+    side: BorderSide(color: Colors.pink.shade300, width: 1.5),
+    borderRadius: BorderRadius.circular(12),
+  ),
+);
